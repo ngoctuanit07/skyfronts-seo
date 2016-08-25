@@ -1,0 +1,100 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="seo" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Settings</label>
+            <tab>skyfronts</tab>
+            <resource>Skyfronts_Seo::seo</resource>
+            <!--
+                SEO Settings
+            -->
+
+            <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                     showInStore="1">
+                  <label>SEO Settings</label>
+                  <field id="noindexparams" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Use Robots NOINDEX, FOLLOW Meta Tag on  Category Pages</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  </field>
+                  <field id="noindexparamssearch" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Use Robots NOINDEX, FOLLOW Meta Tag on Search Results Page</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  </field>
+              </group>
+
+              <!--
+                  Default Page Titles & Meta Descriptions
+              -->
+
+              <group id="metadata" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                     showInStore="1">
+                  <label>Default Page Titles </label>
+                  <field id="product_title_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Enable Default Product Title?</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  </field>
+                  <field id="product_title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Default Product Title</label>
+                      <comment><![CDATA[
+                                  <small>[name] = Product Name<br />
+                                  [store] = Store Name<br />
+                                  <strong>For example: [name] - [store].</strong></small>
+                          ]]>
+                      </comment>
+                      <depends>
+                          <field id="product_title_enabled">1</field>
+                      </depends>
+                  </field>
+
+                  <field id="category_title_enabled" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Enable Default Category Title?</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  </field>
+                  <field id="category_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Default Category Title</label>
+                      <comment><![CDATA[
+                                  <small>[name] = Category Name<br />
+                                  [store] = Store Name<br />
+                                  <strong>For example: [name] - [store].</strong></small>
+                          ]]>
+                      </comment>
+                      <depends>
+                          <field id="category_title_enabled">1</field>
+                      </depends>
+                  </field>
+              </group>
+
+
+
+              <!--
+                  Google Tag Manager
+              -->
+
+              <group id="google_tag_manager" translate="label" type="text" sortOrder="100" showInDefault="1"
+                     showInWebsite="1"
+                     showInStore="1">
+                  <label>Google Tag Manager</label>
+                  <comment>
+                      <![CDATA[
+                              <p>Find out more about Google Tag Manager here: <a href="https://support.google.com/tagmanager/answer/6102821?hl=en" target="_blank">https://support.google.com/tagmanager/answer/6102821?hl=en</a></p>
+                          ]]>
+                  </comment>
+                  <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>Enable Google Tag Manager?</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  </field>
+                  <field id="gtm_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                      <label>GTM ID</label>
+                      <comment><![CDATA[E.g. GTM-XXXXXX]]></comment>
+                      <depends>
+                          <field id="enabled">1</field>
+                      </depends>
+                  </field>
+              </group>
+
+            
+
+
+        </section>
+    </system>
+</config>

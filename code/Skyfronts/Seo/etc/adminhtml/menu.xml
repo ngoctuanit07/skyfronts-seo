@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Skyfronts_Seo::seo" title="Seo" module="Skyfronts_Seo" sortOrder="55" parent="Skyfronts_Base::main_menu" resource="Skyfronts_Seo::seo"/>
+  <add id="Skyfronts_Seo::seo_checklist" title="Checklist" module="Skyfronts_Seo" sortOrder="10" parent="Skyfronts_Seo::seo" action="seo/checklist" resource="Skyfronts_Seo::checklist"/>
+        <add id="Skyfronts_Seo::settings" title="Settings" module="Skyfronts_Seo" sortOrder="10" action="adminhtml/system_config/edit/section/seo" resource="Skyfronts_Seo::settings" parent="Skyfronts_Seo::seo"/>
+    </menu>
+</config>
